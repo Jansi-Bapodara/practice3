@@ -1,7 +1,15 @@
 {
     "dependencies": {
-      "admin": "^1.4.1",
-      "firebase": "^12.8.0",
-      "firebase-admin": "^13.6.0"
+        "admin": "^1.4.1",
+        "firebase": "^12.8.0",
+        "firebase-admin": "^13.6.0"
+    },
+    "scripts": {
+        "dev": "vite",
+        "start": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "vite": "^7.3.1"
     }
-  }
+}
