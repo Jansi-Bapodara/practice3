@@ -13,4 +13,4 @@ if (!admin.apps.length) {
 const db = admin.firestore();
 
 // 3. Export the db so actorServices.js can use it
-module.exports = { db };
+module.exports = { db }
