@@ -27,3 +27,16 @@ async function startApp() {
 
 // 3. Run the app
 startApp();
+
+const express = require('express');
+const app = express();
+const actorRoutes = require('./routes/actorRoutes');
+
+app.use(express.json()); // Allows the server to read JSON data from the frontend
+
+// This makes all routes start with /api/actors
+app.use('/api/actors', actorRoutes);
+
+app.listen(3000, () => {
+  console.log("🎬 Server is running on http://localhost:3000");
+});
