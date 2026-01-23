@@ -1,42 +1,24 @@
-// 1. Import the functions you created in actorServices
+const express = require('express');
+const app = express();
+const path = require('path');
+
+// FIXED: Use './' because actorService.js is in the same folder as server.js
 const { 
     getAllActors, 
     getActionHeroes, 
     updateActorVibe 
-} = require('./services/actorServices');
+} = require('./actorService'); 
 
-// 2. Create a main function to run your logic
-async function startApp() {
-    console.log("🚀 Bollywood Backend is starting...");
-
-    try {
-        // Task A: Show current actors
-        await getAllActors();
-
-        // Task B: Find only the action stars
-        await getActionHeroes();
-
-        // Task C: Update a specific actor (example ID)
-        // replace 'DOCUMENT_ID' with a real ID from your console
-        // await updateActorVibe('DOCUMENT_ID', 'Global Icon');
-
-    } catch (error) {
-        console.error("🛑 An error occurred in the main app:", error);
-    }
-}
-
-// 3. Run the app
-startApp();
-
-const express = require('express');
-const app = express();
+// FIXED: Ensure the path to the routes folder is correct
 const actorRoutes = require('./routes/actorRoutes');
 
-app.use(express.json()); // Allows the server to read JSON data from the frontend
+app.use(express.json());
 
-// This makes all routes start with /api/actors
+// Serve the frontend from the public folder
+app.use(express.static(path.join(__dirname, '../../public')));
+
 app.use('/api/actors', actorRoutes);
 
 app.listen(3000, () => {
-  console.log("🎬 Server is running on http://localhost:3000");
+    console.log("🎬 Bollywood Server is LIVE at http://localhost:3000");
 });

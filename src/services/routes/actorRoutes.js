@@ -8,7 +8,7 @@ const {
   getActionHeroes, 
   updateActorVibe, 
   deleteActor 
-} = require('../actorService'); 
+}= require('../actorService');
 
 // Map URLs to functions
 router.get('/', async (req, res) => {
