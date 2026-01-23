@@ -8,8 +8,8 @@
     },
     "scripts": {
         "dev": "vite",
-        "start": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "start": "node src/services/server.js"
     },
     "devDependencies": {
         "vite": "^7.3.1"
